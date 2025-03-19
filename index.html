@@ -3,32 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills - Vikram Sood</title>
+    <title>Vikram Sood - ePortfolio</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll("section");
+            sections.forEach(section => section.style.display = "none");
+            document.getElementById("home").style.display = "block";
+            
+            document.querySelectorAll("nav a").forEach(link => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    sections.forEach(section => section.style.display = "none");
+                    document.querySelector(this.getAttribute("href")).style.display = "block";
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
-        <h1>Skills and Knowledge1</h1>
+        <img src="assets/images/profile.jpg" alt="Vikram Sood" class="profile-image">
+        <h1>Vikram Sood</h1>
+        <p>IT Professional | Project Engineer | Associate Consultant</p>
     </header>
-
-    <section>
-        <h2>Technical Skills</h2>
+    
+    <nav>
         <ul>
-            <li>Agile methodologies (SAFe, Scrum)</li>
-            <li>Programming: Java, JavaScript, SQL</li>
-            <li>Cloud: AWS</li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">IT Projects</a></li>
+            <li><a href="#skills">Skills & Knowledge</a></li>
+            <li><a href="#reflections">Reflections</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h2>About Me</h2>
+        <p>With 7 years of IT experience, I have worked as a Project Engineer and Associate Consultant, specializing in Agile, Java, React, Spring Boot, PostgreSQL, and AWS.</p>
+    </section>
+
+    <section id="projects">
+        <h2>IT Projects</h2>
+        <div class="project">
+            <h3>AIIMS IT Support</h3>
+            <p>Developed a scalable web application using Java, React, and PostgreSQL, optimizing API communications and database interactions.</p>
+        </div>
+        <div class="project">
+            <h3>Microsoft Internal Operations</h3>
+            <p>Processed records using advanced Excel and SQL queries, reducing data processing time significantly.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills & Knowledge</h2>
+        <ul>
+            <li>Agile, SAFe, Scrum</li>
+            <li>Java, JavaScript, React, Spring Boot</li>
+            <li>PostgreSQL, AWS, Apache Kafka</li>
+            <li>UAT, Data Analysis, CI/CD Pipelines</li>
         </ul>
     </section>
 
-    <section>
-        <h2>Certifications</h2>
-        <ul>
-            <li>Postgraduate Certification in Big Data (2020)</li>
-        </ul>
+    <section id="reflections">
+        <h2>Reflections</h2>
+        <p>Each project has contributed to my growth, refining my technical and analytical skills, while enhancing problem-solving capabilities.</p>
     </section>
 
     <footer>
-        <p>Learn more about my projects and growth.</p>
+        <p>&copy; 2025 Vikram Sood | ePortfolio</p>
     </footer>
 </body>
 </html>
